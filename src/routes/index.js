@@ -1,10 +1,10 @@
-const router=require('express').Router()
+const router = require('express').Router()
 
 
 //rotas
-router.get('/', (req, res) =>{
-    res.render('index',{
-        title:'Titulo teste'
+router.get('/', (req, res) => {
+    res.render('index', {
+        title: 'Titulo teste'
     })
 })
 

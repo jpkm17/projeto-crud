@@ -1,18 +1,21 @@
 const CustomersModel = require('../models/customers')
+const {crypto} = require('../utils/password')
 
-function add(req, res) {
+async function add(req, res) {
     const {
         name,
         age,
         email,
         password,
     } = req.body
-    s
+    
+    const passwordCrypto =  await crypto(password)
+
     const register = new CustomersModel({
         name,
         age,
         email,
-        password
+        password: passwordCrypto
     })
 
     register.save()
